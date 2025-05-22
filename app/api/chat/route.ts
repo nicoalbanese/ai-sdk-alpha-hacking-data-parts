@@ -18,7 +18,6 @@ export const maxDuration = 30;
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
-  console.log(JSON.stringify(convertToModelMessages(messages), null, 2));
 
   const stream = createUIMessageStream({
     execute: (writer) => {
